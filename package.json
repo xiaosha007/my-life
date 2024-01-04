@@ -1,0 +1,42 @@
+{
+  "name": "my-life-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3003 && npm run open-browser",
+    "open-browser": "open http://localhost:3003",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@tsparticles/engine": "^3.0.3",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.3",
+    "lodash": "^4.17.21",
+    "next": "14.0.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-type-animation": "^3.2.0",
+    "swiper": "^11.0.5",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
