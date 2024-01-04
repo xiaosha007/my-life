@@ -9,15 +9,16 @@ export const Footer = () => {
         <p className='text-center text-3xl font-bold uppercase'>
           Contact <span className='text-yellow-400'> me</span>
         </p>
-        <div className='mx-auto mt-5 grid w-[90%] grid-cols-2 gap-3 sm:grid-cols-3 md:w-3/4'>
+        <div className='grid-cols-1gap-3 mx-auto mt-5 grid w-[90%] sm:grid-cols-3 md:w-3/4'>
           {ContactData.map((data, index) => {
             return (
-              <ContactItem
-                key={index}
-                description={data.description}
-                icon={data.icon}
-                title={data.title}
-              />
+              <div key={index} className='mt-3 sm:mt-0'>
+                <ContactItem
+                  description={data.description}
+                  icon={data.icon}
+                  title={data.title}
+                />
+              </div>
             );
           })}
         </div>

@@ -70,7 +70,7 @@ export default function Home() {
           <div className='my-10'>
             <TechSwiper />
           </div>
-          <div className='mx-auto mt-5 grid grid-cols-3 items-center gap-10'>
+          <div className='mx-auto mt-5 grid grid-cols-1 items-center gap-10 px-10 md:grid-cols-3 md:px-0'>
             {ServiceData.map((service) => {
               return (
                 <div key={service.title}>
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
         </section>
         {/* Experiences */}
-        <section className='mx-auto mt-20 px-32'>
+        <section className='mx-auto mt-20 '>
           <p className='text-center text-3xl font-bold uppercase'>
             My <span className='text-yellow-400'>Experiences</span>
           </p>
@@ -110,7 +110,7 @@ export default function Home() {
             {' & '}
             <span className='text-blue-400'>Awards</span>
           </p>
-          <div className='grid grid-cols-3 gap-5 py-10 lg:px-[10rem]'>
+          <div className='grid grid-cols-1 gap-5 py-10 sm:grid-cols-3 lg:px-[10rem]'>
             {CertData.map((data, index) => {
               return (
                 <CertificationCard
