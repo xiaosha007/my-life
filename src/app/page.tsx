@@ -86,7 +86,7 @@ export default function Home() {
           </div>
         </section>
         {/* Experiences */}
-        <section className='mt-20'>
+        <section className='mx-auto mt-20 px-32'>
           <p className='text-center text-3xl font-bold uppercase'>
             My <span className='text-yellow-400'>Experiences</span>
           </p>
