@@ -1,11 +1,11 @@
 'use client';
 
-import { Autoplay } from 'swiper/modules';
-import { TechsData } from '../constants';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import _ from 'lodash';
 import Image from 'next/image';
 import 'swiper/css';
-import _ from 'lodash';
+import { Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { TechsData } from '../constants';
 
 export const TechSwiper = () => {
   // get max height to assign text in the correct position
@@ -35,7 +35,9 @@ export const TechSwiper = () => {
                   className='mx-auto'
                 />
               </div>
-              <p className='mt-1 text-center text-sm'>{skill.name}</p>
+              <p className='mt-1 overflow-x-hidden text-center text-sm'>
+                {skill.name}
+              </p>
             </div>
           </SwiperSlide>
         ))}
@@ -66,7 +68,9 @@ export const TechSwiper = () => {
                     className='mx-auto'
                   />
                 </div>
-                <p className='mt-1 text-center text-sm'>{skill.name}</p>
+                <p className='mt-1 overflow-x-hidden text-center text-sm'>
+                  {skill.name}
+                </p>
               </div>
             </SwiperSlide>
           );

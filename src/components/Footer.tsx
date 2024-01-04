@@ -23,9 +23,9 @@ export const Footer = () => {
           })}
         </div>
       </div>
-      <div className='mt-5 flex justify-between border-t-2 border-gray-400 pt-5 opacity-70'>
+      <div className='mt-5 grid grid-cols-1 justify-between border-t-2 border-gray-400 pt-5 text-xs opacity-70 md:grid-cols-2 md:text-base'>
         <p className=''>My Life 2023 | All Rights Reserved</p>
-        <p>Created by Wei Xiang</p>
+        <p className='text-left md:text-end'>Created by Wei Xiang</p>
       </div>
     </div>
   );
