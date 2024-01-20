@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { CertificationCard } from '../components/CertificationCard';
-import { ExperienceItem } from '../components/ExperienceItem';
 import { GradientText } from '../components/GradientText';
 import { LinkButton } from '../components/LinkButton';
 import { Particle } from '../components/Particle';
 import { ServiceCard } from '../components/ServiceCard';
 import { TechSwiper } from '../components/TechsSwiper';
+import { Timeline } from '../components/Timeline';
 import { TypingText } from '../components/TypingText';
 import { CertData, ExperienceData, ServiceData } from '../constants';
 
@@ -60,7 +60,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className='mt-20 bg-[#121121] px-5 py-10'>
+      <div className='relative mt-20 bg-[#121121] px-5 py-10'>
         {/* Services */}
         <section>
           <p className='text-center text-3xl font-bold uppercase'>
@@ -90,7 +90,10 @@ export default function Home() {
           <p className='text-center text-3xl font-bold uppercase'>
             My <span className='text-yellow-400'>Experiences</span>
           </p>
-          <div className='mx-atuo grid grid-cols-1 gap-10 p-10 md:grid-cols-2 '>
+          <div className='mt-5'>
+            <Timeline items={ExperienceData} />
+          </div>
+          {/* <div className='mx-atuo grid grid-cols-1 gap-6 px-28 py-10 md:grid-cols-2'>
             {ExperienceData.map((data, index) => {
               return (
                 <ExperienceItem
@@ -98,10 +101,11 @@ export default function Home() {
                   description={data.description}
                   title={data.title}
                   years={data.years}
+                  organization={data.organization}
                 />
               );
             })}
-          </div>
+          </div> */}
         </section>
         {/* Certifications */}
         <section className='mt-20'>

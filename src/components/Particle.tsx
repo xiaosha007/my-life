@@ -1,10 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { useEffect, useMemo, useState } from 'react';
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+import { Container, ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-import { Container, Engine, ISourceOptions } from '@tsparticles/engine';
 
 export const Particle = () => {
   const [init, setInit] = useState(false);

@@ -4,7 +4,9 @@ import {
   FaKeyboard,
   FaRobot,
 } from 'react-icons/fa6';
+import { GiBookCover } from 'react-icons/gi';
 import { MdEmail, MdPhone } from 'react-icons/md';
+import { SiKubernetes, SiPython, SiTypescript } from 'react-icons/si';
 
 export const TechsData = [
   {
@@ -86,32 +88,78 @@ export const ServiceData = [
   },
 ];
 
-export const ExperienceData = [
+export const ExperienceData: {
+  title: string;
+  description: string;
+  years: string;
+  organization: { name: string };
+  bgColor?: string;
+  icon?: ExperienceIconNames;
+}[] = [
   {
-    title: 'Computer science student (Specialized in Data Science)',
+    title: 'Computer science student ',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum faucibus ex, suscipit malesuada ipsum pellentesque ac. Proin vehicula pulvinar nulla eget maximus. Sed finibus mi.',
-    years: 'Jun 2020 - July 2021',
+      'A computer science student that is specialized in data science.',
+    years: 'July 20217 - Jun 2021',
+    organization: {
+      name: 'Multimedia University',
+    },
+    bgColor: 'rgb(37 99 235)',
+    icon: 'giBookCover',
   },
   {
     title: 'Part-time Software Engineer',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum faucibus ex, suscipit malesuada ipsum pellentesque ac. Proin vehicula pulvinar nulla eget maximus. Sed finibus mi.',
-    years: 'Jun 2020 - July 2021',
+      'Responsible for maintening existing project and helped to develop new project from scratch.',
+    years: 'Jan 2020 - Sept 2020',
+    organization: {
+      name: 'Leocode Sdn Bhd',
+    },
+    bgColor: 'rgb(185 28 28 / var(--tw-bg-opacity))',
+    icon: 'siPython',
   },
   {
     title: 'Junior Software Engineer',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum faucibus ex, suscipit malesuada ipsum pellentesque ac. Proin vehicula pulvinar nulla eget maximus. Sed finibus mi.',
-    years: 'Jun 2020 - July 2021',
+    description: 'Involved in project development.',
+    years: 'Jun 2021 - Nov 2021',
+    organization: {
+      name: 'Grandshopware Sdn Bhd',
+    },
+    icon: 'siTypeScript',
+    bgColor: 'rgb(22 101 52 / var(--tw-bg-opacity))',
   },
   {
     title: 'Intermediate Software Engineer',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum faucibus ex, suscipit malesuada ipsum pellentesque ac. Proin vehicula pulvinar nulla eget maximus. Sed finibus mi.',
-    years: 'Jun 2020 - July 2021',
+      'Lead a team of 4 (including me) in developing a centralized management system from scratch.',
+    years: 'Dec 2021 - Jun 2023',
+    organization: {
+      name: 'Grandshopware Sdn Bhd',
+    },
+    bgColor: 'rgb(22 101 52 / var(--tw-bg-opacity))',
+    icon: 'siTypeScript',
+  },
+  {
+    title: 'Software Engineer',
+    description:
+      'Maintain existing project. Joined a new team in developing an insurance related system from scratch.',
+    years: 'July 2023 - NOW',
+    organization: {
+      name: 'Bjak Sdn Bhd',
+    },
+    bgColor: 'rgb(22 101 52 / var(--tw-bg-opacity))',
+    icon: 'siKubernetes',
   },
 ];
+
+export const ExperienceIconMap = {
+  giBookCover: GiBookCover,
+  siTypeScript: SiTypescript,
+  siPython: SiPython,
+  siKubernetes: SiKubernetes,
+} as const;
+
+export type ExperienceIconNames = keyof typeof ExperienceIconMap;
 
 export const ContactData = [
   {
@@ -136,18 +184,18 @@ export const CertData = [
     title: 'Azure Fundamentals',
     issuer: 'Microsoft',
     logoPath: '/microsoft_logo.jpeg',
-    href: 'http://www.microsoft.com', //FIXME: change this to valid cert
+    href: 'https://drive.google.com/file/d/1N2LJP4AsG-1HxkWplf11vCEyNwK7Lri2/view', //FIXME: change this to valid cert
   },
   {
     title: 'Build Basic Generative Adversarial Networks (GANs)',
     issuer: 'Coursera',
     logoPath: '/coursera_logo.jpeg',
-    href: 'https://www.coursera.org', //FIXME: change this to valid cert
+    href: 'https://www.coursera.org/account/accomplishments/certificate/ZRPCN3B2CLS8https://www.coursera.org/account/accomplishments/certificate/ZRPCN3B2CLS8', //FIXME: change this to valid cert
   },
   {
     title: 'Neural Networks and Deep Learning',
     issuer: 'Coursera',
     logoPath: '/coursera_logo.jpeg',
-    href: 'https://www.coursera.org', //FIXME: change this to valid cert
+    href: 'https://www.coursera.org/account/accomplishments/certificate/NJV99Q9XUQKA ', //FIXME: change this to valid cert
   },
 ];
