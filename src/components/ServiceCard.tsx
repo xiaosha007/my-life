@@ -16,9 +16,7 @@ export const ServiceCard = ({
   const bgColor = backgroundColor || 'bg-red-700';
   return (
     <div
-      className={`${
-        backgroundColor || 'bg-red-700'
-      } transform  px-5 py-10 text-center font-semibold uppercase transition-all duration-300 hover:-rotate-6 hover:scale-110`}
+      className={`${bgColor} h-full transform px-5 py-10 text-center font-semibold uppercase transition-all duration-300 hover:-rotate-6 hover:scale-110`}
     >
       {React.createElement(icon, { className: 'mx-auto h-24 w-24' })}
       <p className='my-2 text-xl'>{title}</p>

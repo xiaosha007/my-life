@@ -39,7 +39,9 @@ export default function Home() {
           </div>
           <p className='mt-10'>
             A programmer that loves to build things from scratch and passionate
-            in solving issues that are interesting and challenging.
+            in solving issues that are interesting and challenging. <br />
+            Also, I like travelling and enbrace the enjoyment of adapting to
+            different cultures.
           </p>
           <LinkButton
             href='/resume.pdf'
@@ -70,10 +72,10 @@ export default function Home() {
           <div className='my-10'>
             <TechSwiper />
           </div>
-          <div className='mx-auto mt-5 grid grid-cols-1 items-center gap-10 px-10 md:grid-cols-3 md:px-0'>
+          <div className='mx-auto mt-5 grid  grid-cols-1 items-center gap-10 px-10 md:grid-cols-3 md:px-0'>
             {ServiceData.map((service) => {
               return (
-                <div key={service.title}>
+                <div key={service.title} className='h-full'>
                   <ServiceCard
                     description={service.description}
                     icon={service.icon}

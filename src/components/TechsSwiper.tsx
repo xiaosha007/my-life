@@ -1,15 +1,12 @@
 'use client';
 
-import _ from 'lodash';
 import Image from 'next/image';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { TechsData } from '../constants';
+import { BackendTechData, FrontendTechData } from '../constants';
 
 export const TechSwiper = () => {
-  // get max height to assign text in the correct position
-  const maxHeight = _.maxBy(TechsData, (tech) => tech.height)?.height || 0;
   return (
     <>
       <Swiper
@@ -23,7 +20,7 @@ export const TechSwiper = () => {
         modules={[Autoplay]}
         className='max-w-[80%] '
       >
-        {TechsData.map((skill, index) => (
+        {FrontendTechData.map((skill, index) => (
           <SwiperSlide key={index}>
             <div className='mx-1'>
               <div className='h-[90px]'>
@@ -54,8 +51,7 @@ export const TechSwiper = () => {
         modules={[Autoplay]}
         className='mt-5 max-w-[80%]'
       >
-        {TechsData.map((skill, index) => {
-          const heightClass = `h-[${maxHeight + 10}px]`;
+        {BackendTechData.map((skill, index) => {
           return (
             <SwiperSlide key={index} className='relative mb-8'>
               <div className='mx-1'>

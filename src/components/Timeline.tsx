@@ -50,7 +50,9 @@ export const Timeline = ({
             }
             visible={true}
           >
-            <h3 className='vertical-timeline-element-title'>{item.title}</h3>
+            <h3 className='vertical-timeline-element-title text-lg font-bold'>
+              {item.title}
+            </h3>
             <h4 className='vertical-timeline-element-subtitle'>
               {item.organization?.name}
             </h4>
