@@ -1,7 +1,8 @@
 'use server';
 
-import { redirect } from 'next/navigation';
+import { RedirectType, redirect } from 'next/navigation';
 import { z } from 'zod';
+import { RestApi } from '../../utils';
 
 const createMomentSchema = z.object({
   content: z.string().min(1, 'Missing content!'),
@@ -11,6 +12,9 @@ const createMomentSchema = z.object({
 export const createMoment = async (prevState: any, formData: FormData) => {
   const title = formData.get('title');
   const content = formData.get('content');
+  // at this moment NextJS is having bug with `redirect` and it cannot be used inside try...catch block
+  // https://stackoverflow.com/questions/76191324/next-13-4-error-next-redirect-in-api-routes
+  let failedToRedirect = false;
 
   try {
     const parsed = createMomentSchema.parse({
@@ -18,27 +22,24 @@ export const createMoment = async (prevState: any, formData: FormData) => {
       title,
     });
 
-    const res = await fetch(`${process.env.BASE_API ?? ''}/api/article`, {
-      method: 'post',
-      body: JSON.stringify(parsed),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const res = await RestApi.POST({
+      body: parsed,
+      path: '/api/articles',
     });
     const data = await res.json();
     if (data.id) {
       // success handling
-      redirect('/moment/create');
-      return {
-        id: data.id,
-        statusCode: 200,
-      };
     } else {
       // fail handling
       throw new Error(`Unexpected error!`);
     }
   } catch (err) {
     console.log(err);
-    return { message: 'Failed to create!', statusCode: 500 };
+    failedToRedirect = true;
   }
+
+  if (!failedToRedirect) {
+    return redirect('/moment', RedirectType.push);
+  }
+  return { message: 'Failed to create!', statusCode: 500 };
 };

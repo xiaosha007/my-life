@@ -17,6 +17,7 @@ export const Footer = () => {
                   description={data.description}
                   icon={data.icon}
                   title={data.title}
+                  link={data.link}
                 />
               </div>
             );

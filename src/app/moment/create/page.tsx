@@ -1,9 +1,9 @@
 'use client';
 
-import { Button } from '@/components/Button';
 import { LinkButton } from '@/components/LinkButton';
-import { createMoment } from '../actions';
 import { useFormState } from 'react-dom';
+import { SubmitButton } from '../../../components/SubmitButton';
+import { createMoment } from '../actions';
 
 const initialState = {
   message: '',
@@ -39,12 +39,10 @@ export default function CreateMoment() {
           />
         </label>
       </section>
-      <div className='flex justify-center'>
-        <Button className=' mt-5 w-1/2'>Submit</Button>
-      </div>
+      <SubmitButton>Submit</SubmitButton>
 
       {state.statusCode === 500 && (
-        <div className='mt-10 bg-yellow-200 p-2'>
+        <div className='mt-10 rounded bg-yellow-200 p-2'>
           <p className='text-2xl text-red-500'>{state.message}</p>
         </div>
       )}

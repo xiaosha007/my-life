@@ -5,12 +5,14 @@ export const ContactItem = ({
   description,
   icon,
   title,
+  link,
 }: {
   title: string;
   description: string;
   icon: IconType;
+  link?: string;
 }) => {
-  return (
+  const element = (
     <div className='flex w-fit items-center justify-center'>
       {/* circle box */}
       <div className='rounded-full bg-yellow-400'>
@@ -21,5 +23,16 @@ export const ContactItem = ({
         <p className='text-sm text-[#d3d2d2]'>{description}</p>
       </div>
     </div>
+  );
+  return (
+    <>
+      {link ? (
+        <a href={link} target='_blank'>
+          {element}
+        </a>
+      ) : (
+        element
+      )}
+    </>
   );
 };

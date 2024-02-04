@@ -1,9 +1,4 @@
-import {
-  FaAddressBook,
-  FaFileCode,
-  FaKeyboard,
-  FaRobot,
-} from 'react-icons/fa6';
+import { FaFileCode, FaGithub, FaKeyboard, FaRobot } from 'react-icons/fa6';
 import { GiBookCover } from 'react-icons/gi';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { SiKubernetes, SiPython, SiTypescript } from 'react-icons/si';
@@ -210,9 +205,10 @@ export type ExperienceIconNames = keyof typeof ExperienceIconMap;
 
 export const ContactData = [
   {
-    title: 'Address',
-    description: 'Selangor, Malaysia',
-    icon: FaAddressBook,
+    title: 'Github',
+    description: 'xiaosha007',
+    icon: FaGithub,
+    link: 'https://github.com/xiaosha007',
   },
   {
     title: 'Phone',
@@ -223,6 +219,7 @@ export const ContactData = [
     title: 'Email',
     description: 'l_weixiang@outlook.com',
     icon: MdEmail,
+    link: 'mailto:l_weixiang@outlook.com',
   },
 ];
 
