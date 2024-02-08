@@ -15,7 +15,10 @@ export default async function Moment({ params }: { params: { id: string } }) {
   return (
     <div className='flex flex-col items-center justify-center p-10'>
       <Headline>{moment.title}</Headline>
-      <div className='mt-10 md:px-32'>{moment.content}</div>
+      <div
+        className='mt-10 md:px-32'
+        dangerouslySetInnerHTML={{ __html: moment.content }}
+      />
     </div>
   );
 }
