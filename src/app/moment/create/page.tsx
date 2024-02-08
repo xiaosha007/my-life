@@ -2,8 +2,9 @@
 
 import { LinkButton } from '@/components/LinkButton';
 import { useFormState } from 'react-dom';
+import { createMoment } from '../../../actions/moment';
+import { RichTextEditor } from '../../../components/RichTextEditor';
 import { SubmitButton } from '../../../components/SubmitButton';
-import { createMoment } from '../actions';
 
 const initialState = {
   message: '',
@@ -15,6 +16,7 @@ export default function CreateMoment() {
 
   return (
     <form action={formAction} className='px-20 py-5 text-black'>
+      <RichTextEditor />
       <LinkButton href='/moment' className='px-6'>
         Back
       </LinkButton>

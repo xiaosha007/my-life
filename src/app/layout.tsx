@@ -24,14 +24,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${inter.className} ${nunitoSans.className}  bg-black  bg-main bg-cover bg-fixed bg-center`}
+        className={`${inter.className} ${nunitoSans.className} flex min-h-screen flex-col   bg-black  bg-main bg-cover bg-fixed bg-center`}
       >
         {/* <video autoPlay muted loop className='fixed right-0 bottom-0 min-w-full min-h-full object-cover'>
         <source src="background.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video> */}
         <NavBar />
-        <section className=''>{children}</section>
+        <section className='flex-1'>{children}</section>
         <Footer />
       </body>
     </html>

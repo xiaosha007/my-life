@@ -13,6 +13,24 @@ export namespace RestApi {
     return res;
   };
 
+  export const DELETE = async ({
+    body,
+    path,
+  }: {
+    body?: any;
+    path: string;
+  }) => {
+    const res = await fetch(`${baseUrl}${path}`, {
+      method: 'delete',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return res;
+  };
+
   export const GET = async ({
     params, // TODO: pass into path
     path,

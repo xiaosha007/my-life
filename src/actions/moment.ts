@@ -1,12 +1,21 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { RedirectType, redirect } from 'next/navigation';
 import { z } from 'zod';
-import { RestApi } from '../../utils';
+import { RestApi } from '../utils';
 
 const createMomentSchema = z.object({
-  content: z.string().min(1, 'Missing content!'),
+  content: z
+    .string()
+    .min(1, 'Missing content!')
+    .min(50, "You are writting something meaningful, please don't be lazy."),
   title: z.string().min(1, 'Missing title!'),
+  createdBy: z.string().min(1, 'Missing author!'),
+});
+
+const deleteMomentSchema = z.object({
+  id: z.string().min(1),
 });
 
 export const createMoment = async (prevState: any, formData: FormData) => {
@@ -20,6 +29,7 @@ export const createMoment = async (prevState: any, formData: FormData) => {
     const parsed = createMomentSchema.parse({
       content,
       title,
+      createdBy: 'xiaosha007',
     });
 
     const res = await RestApi.POST({
@@ -39,7 +49,29 @@ export const createMoment = async (prevState: any, formData: FormData) => {
   }
 
   if (!failedToRedirect) {
+    revalidatePath('/moment');
     return redirect('/moment', RedirectType.push);
   }
   return { message: 'Failed to create!', statusCode: 500 };
+};
+
+export const deleteMoment = async ({ momentId }: { momentId: string }) => {
+  // const momentId = formData.get('momentId');
+
+  try {
+    const parsed = deleteMomentSchema.parse({
+      id: momentId,
+    });
+
+    const res = await RestApi.DELETE({
+      path: `/api/articles/${parsed.id}`,
+    });
+    if (res.status === 200) {
+    } else throw new Error(`Unexpected error!`);
+  } catch (err) {
+    console.log(err);
+    return { message: 'Failed to delete!', statusCode: 500 };
+  } finally {
+    revalidatePath('/moment');
+  }
 };

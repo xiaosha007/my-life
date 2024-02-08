@@ -141,7 +141,7 @@ export const ExperienceData: {
     title: 'Computer science student ',
     description:
       'A computer science student that is specialized in data science. FYP (final year project) is AI-related with title "Deep Saliency Retargeting", which is interesting and can be found in my github.',
-    years: 'July 20217 - Jun 2021',
+    years: 'July 2017 - Jun 2021',
     organization: {
       name: 'Multimedia University',
     },

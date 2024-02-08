@@ -1,4 +1,6 @@
 import { LinkButton } from '../../components/LinkButton';
+import { MomentPost } from '../../components/moment/MomentPost';
+import { moment } from '../../type/moment';
 import { RestApi } from '../../utils';
 
 const getMoments = async () => {
@@ -6,32 +8,23 @@ const getMoments = async () => {
     path: '/api/articles/',
   });
   return res.json().then((_res) => {
-    return _res as { content: string; title: string; id: string }[]; // TODO: create a type that can be reused;
+    return _res as moment[]; // TODO: create a type that can be reused;
   });
 };
 
 export default async function Moments() {
-  // const articles: { content: string; title: string }[] = [];
-
   const articles = await getMoments();
 
   return (
     <>
       {/* <p className='text-3xl'> My Life Moment </p> */}
       {articles.length ? (
-        <div className='px-32 py-10'>
-          {articles.map(({ title, content, id }) => {
-            return (
-              <div
-                key={id}
-                className='mt-5 rounded border-black bg-black-overlay p-5'
-              >
-                <a href={`/moment/${id}`}>
-                  <p className='text-2xl font-bold '>{title}</p>
-                  <p className='text-sm text-[#d3d2d2]'>{content}</p>
-                </a>
-              </div>
-            );
+        <div className=' flex flex-col px-10 py-10 md:px-32'>
+          <div className='self-end text-end font-bold'>
+            <LinkButton href={'/moment/create'}>Create your moment</LinkButton>
+          </div>
+          {articles.map((moment) => {
+            return <MomentPost moment={moment} key={moment.id} />;
           })}
         </div>
       ) : (
