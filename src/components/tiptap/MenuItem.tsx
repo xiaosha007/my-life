@@ -15,14 +15,14 @@ export const MenuItem = ({
   isActive?: any;
 }) => {
   return (
-    <button
-      className={`menu-item${
+    <div
+      className={`cursor-pointer menu-item${
         isActive && isActive() ? ' is-active' : ''
       } text-white`}
       onClick={action}
       title={title}
     >
       {icon && React.createElement(icon, { className: 'mx-auto h-16 w-16' })}
-    </button>
+    </div>
   );
 };
