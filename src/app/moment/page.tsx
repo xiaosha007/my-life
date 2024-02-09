@@ -19,7 +19,7 @@ export default async function Moments() {
     <>
       {/* <p className='text-3xl'> My Life Moment </p> */}
       {articles.length ? (
-        <div className=' flex flex-col px-10 py-10 md:px-32'>
+        <div className=' flex flex-col px-10 py-10'>
           <div className='self-end text-end font-bold'>
             <LinkButton href={'/moment/create'}>Create your moment</LinkButton>
           </div>

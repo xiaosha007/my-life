@@ -1,4 +1,4 @@
-import { Headline } from '../../../components/Headline';
+import { LinkButton } from '../../../components/LinkButton';
 import { RestApi } from '../../../utils';
 
 const getMoment = async (id: string) => {
@@ -13,12 +13,24 @@ const getMoment = async (id: string) => {
 export default async function Moment({ params }: { params: { id: string } }) {
   const moment = await getMoment(params.id);
   return (
-    <div className='flex flex-col items-center justify-center p-10'>
-      <Headline>{moment.title}</Headline>
-      <div
-        className='mt-10 md:px-32'
-        dangerouslySetInnerHTML={{ __html: moment.content }}
-      />
-    </div>
+    <>
+      <LinkButton className='m-5 px-6' href={`/moment`}>
+        Back
+      </LinkButton>
+      <div className='flex flex-col items-center justify-center  bg-black-overlay p-10 leading-8'>
+        <div className='mt-5'>
+          <p className='text-center text-4xl'>{moment.title}</p>
+        </div>
+        <div
+          className='text-over mt-10 w-full'
+          dangerouslySetInnerHTML={{ __html: moment.content }}
+        />
+      </div>
+      <div className='mt-5 px-20 pb-5'>
+        <LinkButton className='w-full' href={`/moment/${params.id}/update`}>
+          Edit
+        </LinkButton>
+      </div>
+    </>
   );
 }

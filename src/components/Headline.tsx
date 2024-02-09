@@ -4,5 +4,6 @@ export const Headline: React.FC<{
   size?: string;
   children: ReactNode;
 }> = ({ size, children }) => {
-  return <p className={`text-${size ?? '2xl'} font-bold`}>{children}</p>;
+  const textSize = `text-${size ?? '2xl'}`;
+  return <p className={`${textSize} font-bold`}>{children}</p>;
 };

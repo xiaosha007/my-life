@@ -45,6 +45,10 @@ export const Tiptap = ({
           const html = editor.getHTML();
           setContent(html);
         }}
+        onCreate={() => {
+          console.log(`Created...`);
+          // editor?.commands.setContent(content);
+        }}
       >
         {' '}
       </EditorProvider>

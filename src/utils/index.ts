@@ -13,6 +13,18 @@ export namespace RestApi {
     return res;
   };
 
+  export const PATCH = async ({ body, path }: { body: any; path: string }) => {
+    const res = await fetch(`${baseUrl}${path}`, {
+      method: 'PATCH',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return res;
+  };
+
   export const DELETE = async ({
     body,
     path,

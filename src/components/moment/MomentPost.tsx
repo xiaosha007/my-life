@@ -27,7 +27,7 @@ export const MomentPost: React.FC<{
       </div>
       <a href={`/moment/${id}`}>
         <div
-          className=' line-clamp-3 w-full overflow-hidden  text-ellipsis text-sm text-[#d4b5b5]'
+          className=' line-clamp-3 w-full overflow-hidden  text-ellipsis text-sm !text-[#d4b5b5]'
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </a>

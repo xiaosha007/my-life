@@ -11,7 +11,7 @@ export const LinkButton: React.FC<{
     <Link
       href={href}
       target={target}
-      className={`rounded-lg bg-[#55e6a5] p-2 text-black hover:bg-yellow-400 ${className} block w-fit`}
+      className={`rounded-lg bg-[#55e6a5] p-2 text-black hover:bg-yellow-400 ${className} block w-fit text-center`}
     >
       {children}
     </Link>

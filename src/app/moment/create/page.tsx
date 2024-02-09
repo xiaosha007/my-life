@@ -13,19 +13,19 @@ const initialState = {
 };
 
 export default function CreateMoment() {
+  console.log(`create page Rendering...`);
+
   const [state, formAction] = useFormState(createMoment, initialState);
   const [content, setContent] = useState<string>('');
 
   return (
-    <form
-      action={formAction}
-      className='overflow-x-hidden px-20 py-5 text-black'
-    >
+    <form action={formAction} className='px-5 py-5 text-black md:px-0'>
       <LinkButton href='/moment' className='px-6'>
         Back
       </LinkButton>
-      <p className='mt-5 text-3xl text-white'>
-        Create <strong className='text-yellow-200'>YOUR</strong> moment
+      <p className='mt-5 text-4xl font-extrabold leading-tight text-white'>
+        Create <span className='text-yellow-400'>your</span> unforgettable
+        moment
       </p>
       <section className='mt-5'>
         <label>
