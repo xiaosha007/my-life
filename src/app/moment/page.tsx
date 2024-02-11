@@ -4,12 +4,17 @@ import { moment } from '../../type/moment';
 import { RestApi } from '../../utils';
 
 const getMoments = async () => {
-  const res = await RestApi.GET({
-    path: '/api/articles/',
-  });
-  return res.json().then((_res) => {
-    return _res as moment[]; // TODO: create a type that can be reused;
-  });
+  try {
+    const res = await RestApi.GET({
+      path: '/api/articles/',
+    });
+    return res.json().then((_res) => {
+      return _res as moment[]; // TODO: create a type that can be reused;
+    });
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
 };
 
 export default async function Moments() {
@@ -18,7 +23,7 @@ export default async function Moments() {
   return (
     <>
       {/* <p className='text-3xl'> My Life Moment </p> */}
-      {articles.length ? (
+      {articles?.length ? (
         <div className=' flex flex-col px-10 py-10'>
           <div className='self-end text-end font-bold'>
             <LinkButton href={'/moment/create'}>Create your moment</LinkButton>
