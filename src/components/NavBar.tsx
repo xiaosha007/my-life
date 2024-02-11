@@ -5,10 +5,6 @@ export const NavBar = () => {
   // TODO: afterwards can make this a prop
   const navItems = [
     {
-      label: 'About me',
-      href: '/about-me',
-    },
-    {
       label: 'Moment',
       href: '/moment',
     },
